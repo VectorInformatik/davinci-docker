@@ -1,0 +1,10 @@
+// This is the initial devcontainer configuration for the new repository
+{
+    "name": "Developer Classic Development",
+    "dockerComposeFile": "./docker-compose.yml",
+    "service": "developer_classic",
+    "shutdownAction": "stopCompose",
+    "initializeCommand": "echo COMPOSE_PROJECT_NAME=developer_classic_${devcontainerId} > .devcontainer/.env",
+    "postStartCommand": "vector-license-setup > /dev/null",
+    "workspaceFolder": "/work"
+}

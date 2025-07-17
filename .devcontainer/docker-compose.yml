@@ -1,0 +1,13 @@
+services:
+  developer_classic:
+    image: developer_classic:latest
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+      - LANG=${LANG}
+      - TZ=Europe/Berlin
+      - LICENSE_SERVER=255.255.255.255
+    volumes:
+      - ..:/work:rw
+    command: ["tail", "-f", "/dev/null"]
